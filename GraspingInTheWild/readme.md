@@ -20,11 +20,33 @@ Original paper : https://arxiv.org/pdf/1912.04344.pdf
   - Purely self-supervised learning : Robot is exposed only to limited environments.
   - Human annotations and human teleoperation data : Require trained operators and data is limited to certain environments.
   - Using data of grasping using human hands : Big gap between kinematics of human hands and robotic grippers make transfer of knowledge hard
-- This approach uses a **cheap and easy to use** data collection device, giving **diverse data** which can be **easily transferred** to real robots
+- Motivations
+  - **cheap and easy to use** data collection device
+  - Obtaining **diverse data** about hard to access scenarios
+  - Data must be **easily transferred** to real robots
+- The device was given to several volunteers who did day-to-day tasks using the device. 12 hours of gripper-centric RGB-D video was recorded, labelled with the signal from push button used to control the gripper.
+
+### Data processing
+- Trajectory of camera is extracted from video using standard computer vision algorithms (using SIFT, RANSAC, and SVD). It is refined using ICP
+- Since gripper is placed in a fixed position relative to camera, the position and orientation of the gripper can be found be using a rigid body transform which would have been computed before-hand
+- The videos are split into short clips of each attempt. The frames before button push (when gripper is open) is the pre-grasp trajectory and the frames till the gripper is opened again is the post-grasp trajectory.
+- Pixel mask of target can also be obtained by detecting pixel regions that are stationary in the post-grasp trajectory video.
+
+# Closed-loop vision-based Grasping system
 - 
+
+## What i did not understand
+
+- How does reinforcement learning learn from demonstration data
+- SIFT, RANSAC, SVD for visual odometry
+- ICP for refinement of trajectory
 
 ---
 
 ## Abbreviations
 - DOF : Degrees of freedom
 - RGB-D : Red Green Blue - Depth
+- SIFT : Scale Invariant Feature Transform
+- RANSAC : RANdom SAmple Consensus
+- SVD : Singular value decomposition 
+- ICP : Iterative closest point
