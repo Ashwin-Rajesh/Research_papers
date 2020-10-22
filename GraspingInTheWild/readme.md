@@ -32,7 +32,7 @@ Original paper : https://arxiv.org/pdf/1912.04344.pdf
 - The videos are split into short clips of each attempt. The frames before button push (when gripper is open) is the pre-grasp trajectory and the frames till the gripper is opened again is the post-grasp trajectory.
 - Pixel mask of target can also be obtained by detecting pixel regions that are stationary in the post-grasp trajectory video.
 
-# Closed-loop vision-based Grasping system
+### Closed-loop vision-based Grasping system
 - 
 
 ## What i did not understand
