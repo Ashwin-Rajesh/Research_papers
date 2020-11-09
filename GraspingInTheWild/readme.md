@@ -68,3 +68,9 @@ Original paper : https://arxiv.org/pdf/1912.04344.pdf
 - RANSAC : RANdom SAmple Consensus
 - SVD : Singular value decomposition 
 - ICP : Iterative closest point
+
+---
+
+## References
+- Q learning : https://towardsdatascience.com/simple-reinforcement-learning-q-learning-fcddc4b6fe56
+- Q learning : https://www.youtube.com/watch?v=qhRNvCVVJaA
